@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrinho</title>
+        <link rel="stylesheet" href="layout.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <iframe src="header.html" style="width:100%; border:none;height: 10%;"></iframe>
+        <script>
+            const produtos = [
+                { nome: "Monitor Samsung Odyssey CRG50", img: "https://t2.tudocdn.net/654487?w=800", categoria: "Monitor", preco: 1299.90, descricao: "Monitor gamer curvo Full HD 144Hz." },
+                { nome: "Monitor LG OLED UltraGear", img: "https://m.media-amazon.com/images/I/61hxnfZGv3L._AC_UF894,1000_QL80_.jpg", categoria: "Monitor", preco: 4999.90, descricao: "Monitor gamer OLED alta performance." },
+                { nome: "Teclado Mecânico RGB", img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800", categoria: "Periférico", preco: 299.90, descricao: "Teclado com iluminação RGB." },
+                { nome: "Mouse Gamer 16000 DPI", img: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800", categoria: "Periférico", preco: 199.90, descricao: "Mouse preciso para jogos." },
+                { nome: "Headset Gamer Surround", img: "https://www.hdstore.com.br/images/thumbs/4096896_600.png", categoria: "Áudio", preco: 249.90, descricao: "Som imersivo com microfone." },
+            ];
+            function GetProdutos() {
+                var div = document.getElementById("ProdCart");
+                var campoTotal = document.getElementById("ValorTotal");
+                var ValorFinal = document.getElementById("ValorFinal");
+                var BTNPagamento = document.getElementById("BTNPagamento");
+                var total = 0;
+                div.innerHTML = "";
+                produtos.forEach(p => {
+                    var produto = `
+                        <li class="list-group-item" style="display: flex;"> 
+                            <p class="col-11" style="margin: 0px;">
+                                ${p.nome} <br>
+                                R$${p.preco} <br>
+                                <img width="40px" src="${p.img}" alt="">
+                            </p> 
+                            <i class="bi bi-trash3-fill pull-right col-1"></i>
+                        </li>
+                    `;
+                    total += p.preco;
+
+                    div.insertAdjacentHTML("beforeend", produto);    
+                });
+                campoTotal.innerHTML = "R$"+ total.toFixed(2);
+                var testes = total - ((total/100)*15);
+                ValorFinal.innerHTML = testes.toFixed(2);
+                BTNPagamento.innerHTML += " R$"+testes.toFixed(2)
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                GetProdutos();
+            });
+        </script>
+        <main class="row" style="height: 100%; margin: 1%;">
+            <div class="col-12 col-sm-12 col-md-3" style="background-color: white; height: 90%; padding: 1%; margin-right: 1%; border-radius: 1em">
+                <ul class="list-group" id="ProdCart"></ul>
+            </div>
+            <div class="col-12 col-sm-12 col-md-3" style="background-color: white; height: 90%; padding: 2%;border-radius: 1em">
+                <div class="row">
+                    <p class="col-7">Valor total: </p>
+                    <p id="ValorTotal" class="col-1"></p>
+                </div>
+                <div class="row">
+                    <p class="col-7">Desnconto: </p>
+                    <p id="" class="col-1">15%</p>
+                </div>
+                <div class="row">
+                    <p class="col-7">Valor após desconto: </p>
+                    <p id="ValorFinal" class="col-1"></p>
+                </div>
+
+                <div style="margin-top: 50%; border: 1px solid; border-radius: 10px;" class="row">
+                    <p class="col-10">Forma de pagamento: </p>
+                    <p id="" class="col-1">Pix</p>
+                </div>
+                <button type="button" id="BTNPagamento" style="margin-top: 5%;" class="btn btn-success col-12">Realizar pagamento</button>
+            </div>
+        </main>
+
+        <iframe src="footer.html" class="footer-frame"></iframe>
+    </body>
+</html>

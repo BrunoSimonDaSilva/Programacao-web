@@ -1,0 +1,149 @@
+#carouselExampleIndicators {
+    max-width: 500px;
+    margin: auto;
+}
+
+#carouselExampleIndicators .carousel-item {
+    height: 300px;
+}
+
+#carouselExampleIndicators img {
+    height: 100%;
+    object-fit: cover;
+}
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/free-vector/abstract-realistic-technology-particle-background_52683-33064.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.card{
+    margin: 4%;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* espaço entre cards */
+}
+
+.card {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-title {
+    min-height: 50px; /* mesma altura pros títulos */
+}
+
+.card-text {
+    min-height: 80px; /* mesma altura pros textos */
+}
+
+.card-body .btn {
+    margin-top: auto; /* joga botão pra baixo */
+}
+
+.footer-frame{
+    width:100%; 
+    border:none; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 10%;
+    border: none;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 28px;
+    color: red;
+    transition: 0.3s;
+}
+
+.cart-icon:hover {
+    text-shadow: 0 0 5px red,
+                 0 0 10px red,
+                 0 0 20px red;
+    transform: scale(1.1);
+}
+
+/* Badge (número) */
+.cart-badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%, -50%);
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.cart-icon {
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px red;
+    }
+    to {
+        text-shadow: 0 0 20px red;
+    }
+}
+
+#BTNPagamento {
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* camada do brilho */
+#BTNPagamento::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255,255,255,0.8) 50%,
+        transparent 70%
+    );
+    animation: brilhoLoop 2s infinite;
+    z-index: 2;
+}
+
+/* animação contínua */
+@keyframes brilhoLoop {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}

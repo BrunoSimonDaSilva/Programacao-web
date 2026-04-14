@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Catálogo</title>
+        <link rel="stylesheet" href="layout.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body>
+        <script>
+            const produtos = [
+                { nome: "Monitor Samsung Odyssey CRG50", img: "https://t2.tudocdn.net/654487?w=800", categoria: "Monitor", preco: 1299.90, descricao: "Monitor gamer curvo Full HD 144Hz." },
+                { nome: "Monitor LG OLED UltraGear", img: "https://m.media-amazon.com/images/I/61hxnfZGv3L._AC_UF894,1000_QL80_.jpg", categoria: "Monitor", preco: 4999.90, descricao: "Monitor gamer OLED alta performance." },
+                { nome: "Teclado Mecânico RGB", img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800", categoria: "Periférico", preco: 299.90, descricao: "Teclado com iluminação RGB." },
+                { nome: "Mouse Gamer 16000 DPI", img: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800", categoria: "Periférico", preco: 199.90, descricao: "Mouse preciso para jogos." },
+                { nome: "Headset Gamer Surround", img: "https://www.hdstore.com.br/images/thumbs/4096896_600.png", categoria: "Áudio", preco: 249.90, descricao: "Som imersivo com microfone." },
+                { nome: "SSD 1TB NVMe", img: "https://images.unsplash.com/photo-1587202372616-b43abea06c2a?w=800", categoria: "Armazenamento", preco: 599.90, descricao: "Alta velocidade para jogos e sistema." },
+                { nome: "HD Externo 2TB", img: "https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?w=800", categoria: "Armazenamento", preco: 399.90, descricao: "Backup portátil de grande capacidade." },
+                { nome: "Placa de Vídeo RTX 4060", img: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800", categoria: "Hardware", preco: 2499.90, descricao: "Excelente desempenho em jogos." },
+                { nome: "Processador Ryzen 5 5600", img: "https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=800", categoria: "Hardware", preco: 899.90, descricao: "Ótimo custo-benefício." },
+                { nome: "Memória RAM 16GB DDR4", img: "https://images.unsplash.com/photo-1562976540-1502c2145186?w=800", categoria: "Hardware", preco: 349.90, descricao: "Performance para multitarefa." },
+                { nome: "Fonte 600W 80 Plus", img: "https://m.media-amazon.com/images/I/71g8teRwnqL.jpg", categoria: "Hardware", preco: 299.90, descricao: "Eficiência energética confiável." },
+                { nome: "Gabinete Gamer RGB", img: "https://lojagoldentec.vteximg.com.br/arquivos/ids/162714-1000-1000/gabinete-gamer-sem-fonte-p2t3c-com-led-rgb-gt-gamer-1-min.jpg?v=638068105339600000", categoria: "Hardware", preco: 279.90, descricao: "Design moderno com iluminação." },
+                { nome: "Cooler para CPU", img: "https://cdn.awsli.com.br/600x450/1271/1271561/produto/49189352/28155952d8.jpg", categoria: "Hardware", preco: 149.90, descricao: "Mantém o processador refrigerado." },
+                { nome: "Webcam Full HD", img: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800", categoria: "Periférico", preco: 189.90, descricao: "Ideal para reuniões e streaming." },
+                { nome: "Mousepad Gamer Grande", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe0nAupO47CoNfebfvSJFOexUFm7TSm6_pMw&s", categoria: "Periférico", preco: 79.90, descricao: "Superfície ampla e precisa." },
+                { nome: "Notebook Gamer i7", img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800", categoria: "Computador", preco: 5999.90, descricao: "Alto desempenho portátil." },
+                { nome: "Placa-mãe B550", img: "https://media.pichau.com.br/media/catalog/product/cache/2f958555330323e505eba7ce930bdf27/b/5/b550-aorus-elite-v24.jpg", categoria: "Hardware", preco: 699.90, descricao: "Compatível com Ryzen." },
+                { nome: "Roteador Wi-Fi 6", img: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=800", categoria: "Rede", preco: 499.90, descricao: "Conexão rápida e estável." },
+                { nome: "Switch 8 Portas", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxluXZFSpqgR09v8aESlZXCFEgqRHj8gTsvw&s", categoria: "Rede", preco: 159.90, descricao: "Expande sua rede cabeada." },
+                { nome: "Cadeira Gamer", img: "https://img.kalunga.com.br/fotosdeprodutos/315744z.jpg", categoria: "Acessório", preco: 899.90, descricao: "Conforto para longas sessões." }
+            ];
+            const categorias = [
+                "Acessório",
+                "Monitor",
+                "Periférico",
+                "Áudio",
+                "Armazenamento",
+                "Hardware",
+                "Computador",
+                "Rede"
+            ]
+            function GetProdutos(nome, categoria) {
+                var div = document.getElementById("DivProdutos");
+                div.innerHTML = "";
+
+                nome = nome.toLowerCase();
+
+                produtos.forEach(p => {
+
+                    const matchNome = nome === "" || p.nome.toLowerCase().includes(nome);
+                    const matchCategoria = categoria === "0" || p.categoria === categoria;
+
+                    if (matchNome && matchCategoria) {
+                        var produto = `
+                        <div class="card col-12 col-sm-12 col-md-3 p-0">
+                            <img src="${p.img}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">${p.nome}</h5>
+                                <h5 class="card-title">R$${p.preco}</h5>
+                                <h6 class="card-subtitle">${p.categoria}</h6>
+                                <p class="card-text">${p.descricao}</p>
+                                <a href="#" class="btn btn-primary">Adicionar ao carrinho</a>
+                            </div>
+                        </div>`;
+
+                        div.insertAdjacentHTML("beforeend", produto);
+                    }
+                });
+                const select = document.getElementById("selectCategoria");
+
+                categorias.forEach(c => {
+                    const option = `<option value="${c}">${c}</option>`;
+                    select.insertAdjacentHTML("beforeend", option);
+                });
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                GetProdutos("","0");
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const searchName = document.getElementById("searchName");
+                const selectCategoria = document.getElementById("selectCategoria");
+
+                searchName.addEventListener("input", () => {
+                    GetProdutos(searchName.value, selectCategoria.value);
+                });
+
+                selectCategoria.addEventListener("change", () => {
+                    GetProdutos(searchName.value, selectCategoria.value);
+                });
+            });
+                        
+        </script>
+        <iframe src="header.html" style="width:100%; border:none; height: 10%;"></iframe>
+        <main>
+            <div style="background-color: white;display: flex; border-radius: 10px; justify-content: space-around;" class="col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+                <div>
+                    <label for="exampleFormControlInput1" class="form-label">Categoria:</label>
+                    <select class="form-select" id="selectCategoria">
+                        <option value="0" select>Todos</option>
+                    </select>
+                </div>                
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Buscar pelo nome:</label>
+                    <input type="text" class="form-control" id="searchName" placeholder="Computador">
+                </div>
+            </div>
+            <div id="DivProdutos" class="row" style="margin: 1%"></div>
+        </main>
+        <iframe src="footer.html" class="footer-frame"></iframe>
+    </body>
+</html>
