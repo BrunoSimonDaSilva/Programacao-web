@@ -14,12 +14,10 @@ O projeto foi desenvolvido com o objetivo de oferecer uma experiência moderna, 
 
 ## 🎮 Funcionalidades
 
-* 🛒 Listagem de produtos (hardware e itens gamer)
+* 🛒 Listagem de produtos
 * 🔍 Sistema de filtragem por nome e categoria
-* 📱 Layout totalmente responsivo (desktop e mobile)
-* 🧺 Carrinho de compras (simulado)
+* 🧺 Carrinho de compras
 * ✨ Interface moderna com efeitos visuais
-* 💳 Botão de pagamento com destaque visual
 
 ## 🎨 Interface
 
@@ -37,14 +35,6 @@ Este projeto tem como foco o desenvolvimento e prática de conceitos de front-en
 * Organização de layouts responsivos
 * Experiência do usuário (UX/UI)
 * Interatividade com JavaScript
-
-## ⚙️ Melhorias Futuras
-
-* 🔐 Sistema de login e autenticação
-* 🌐 Integração com backend (API)
-* 💰 Integração com gateways de pagamento
-* 🗄️ Banco de dados real
-* ⭐ Sistema de avaliações e comentários
 
 ## 📄 Licença
 
