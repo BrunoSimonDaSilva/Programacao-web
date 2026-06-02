@@ -19,6 +19,18 @@ O projeto foi desenvolvido com o objetivo de oferecer uma experiência moderna, 
 * 🧺 Carrinho de compras
 * ✨ Interface moderna com efeitos visuais
 
+### 📝 Gerenciamento de Produtos (CRUD)
+
+A página de catálogo passou a contar com funcionalidades completas de gerenciamento de produtos, permitindo:
+
+* ➕ **Cadastrar produtos** através de formulário modal
+* ✏️ **Editar produtos** existentes com atualização em tempo real
+* ❌ **Remover produtos** da listagem
+* 📋 **Visualizar produtos** organizados em cards responsivos
+* 🔎 **Filtrar produtos** por nome e categoria
+
+Essas funcionalidades foram implementadas utilizando manipulação do DOM com JavaScript, proporcionando uma experiência dinâmica sem necessidade de recarregar a página.
+
 ## 🎨 Interface
 
 O design da **TechGear** foi pensado para o público gamer, trazendo:
@@ -35,6 +47,8 @@ Este projeto tem como foco o desenvolvimento e prática de conceitos de front-en
 * Organização de layouts responsivos
 * Experiência do usuário (UX/UI)
 * Interatividade com JavaScript
+* Implementação de operações CRUD
+* Utilização de componentes do Bootstrap
 
 ## 📄 Licença
 
